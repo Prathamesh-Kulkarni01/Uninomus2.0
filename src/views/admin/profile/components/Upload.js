@@ -15,7 +15,7 @@ import { MdUpload } from "react-icons/md";
 import Dropzone from "views/admin/profile/components/Dropzone";
 
 export default function Upload(props) {
-  const { used, total, ...rest } = props;
+  // const { used, total, ...rest } = props;
   // Chakra Color Mode
   const textColorPrimary = useColorModeValue("secondaryGray.900", "white");
   const brandColor = useColorModeValue("brand.500", "white");
@@ -55,7 +55,7 @@ export default function Upload(props) {
             color={textColorSecondary}
             fontSize='md'
             my={{ base: "auto", "2xl": "10px" }}
-            mx='auto'
+            mx='auto'used
             textAlign='start'>
             Stay on the pulse of distributed projects with an anline whiteboard
             to plan, coordinate and discuss

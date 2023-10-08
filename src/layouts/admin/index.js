@@ -3,11 +3,7 @@ import {
   Portal,
   Box,
   useDisclosure,
-  Text,
-  Button,
-  Link,
 } from "@chakra-ui/react";
-import { Model } from "components/Model/Model";
 import Footer from "components/footer/FooterAdmin.js";
 // Layout components
 import Navbar from "components/navbar/NavbarAdmin.js";

@@ -9,7 +9,7 @@ import Card from "components/card/Card.js";
 import React from "react";
 import Project from "views/admin/profile/components/Project";
 
-export default function Projects(props) {
+export default function Projects() {
   // Chakra Color Mode
   const textColorPrimary = useColorModeValue("secondaryGray.900", "white");
   const textColorSecondary = "gray.400";
