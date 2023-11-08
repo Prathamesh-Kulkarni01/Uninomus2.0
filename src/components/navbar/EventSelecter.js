@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Button,
@@ -6,7 +6,6 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  Text,
   Flex,
   useColorModeValue,
   useDisclosure,
@@ -14,9 +13,11 @@ import {
 import { AddIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Model } from "components/Model/Model";
 import Wizard from "components/wizard/Wizard";
+import service from "Firebase/config";
 
 const EventSelection = () => {
-  const [selectedEvent, setSelectedEvent] = useState("Event 1"); // Initial selected event
+  const [selectedEvent, setSelectedEvent] = useState("Loading...");
+  const [options, setOptions] = useState([]);
   const cardBg = useColorModeValue("white", "navy.800");
   const darkBg = useColorModeValue("white", "navy.900");
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -25,21 +26,28 @@ const EventSelection = () => {
     setSelectedEvent(event);
   };
 
+  useEffect(() => {
+    (async () => {
+      const events = await service.getCollection("Events");
+      setOptions(events);
+      setSelectedEvent(events[0]?.EName);
+    })();
+  }, []);
+
   return (
     <Box mx={2}>
       <Menu bg={cardBg}>
         <MenuButton as={Button} rightIcon={<Icon />}>
-          {selectedEvent.length <= 10
+          {selectedEvent?.length <= 10
             ? selectedEvent
-            : `${selectedEvent.substring(0, 10)}...`}
+            : `${selectedEvent?.substring(0, 10)}...`}
         </MenuButton>
         <MenuList pb={-2} bg={cardBg}>
-          <MenuItem onClick={() => handleEventChange(" Poster Presentation")}>
-            Poster Presentation
-          </MenuItem>
-          <MenuItem onClick={() => handleEventChange("Event 2")}>
-            Event 2
-          </MenuItem>
+          {options.map((option) => (
+            <MenuItem onClick={() => handleEventChange(option?.EName)}>
+              {option?.EName}
+            </MenuItem>
+          ))}
           <MenuItem
             bg={darkBg}
             borderRadius={10}

@@ -53,6 +53,7 @@ export default function Overview() {
           minH={{ base: "auto", lg: "420px", "2xl": "365px" }}
           pe='20px'
           pb={{ base: "100px", lg: "20px" }}
+          showBody={false}
         />
       </Grid>
       <Grid

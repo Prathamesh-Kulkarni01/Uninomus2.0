@@ -25,6 +25,7 @@ import illustration from "assets/img/auth/auth.png";
 import { FcGoogle } from "react-icons/fc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
+import authService from "Firebase/authService";
 
 function SignIn() {
   // Chakra color mode
@@ -94,6 +95,7 @@ function SignIn() {
             bg={googleBg}
             color={googleText}
             fontWeight='500'
+            onClick={()=>{authService.login()}}
             _hover={googleHover}
             _active={googleActive}
             _focus={googleActive}>

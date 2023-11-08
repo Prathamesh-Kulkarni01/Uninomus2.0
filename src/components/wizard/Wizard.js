@@ -20,9 +20,6 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import Card from "components/card/Card";
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
-import { RiEyeCloseLine } from "react-icons/ri";
-import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { mode } from "@chakra-ui/theme-tools";
 import FirstComponent from "./FirstComponent";
 import SecondComponent from "./SecondComponent";

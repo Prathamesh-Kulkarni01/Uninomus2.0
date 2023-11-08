@@ -9,9 +9,11 @@ import {
   Box,
   Text,
   useColorModeValue,
+  Grid,
 } from "@chakra-ui/react";
 import { MdUpload, MdAdd, MdDelete } from "react-icons/md"; // Import Chakra UI and custom icons
 import Dropzone from 'react-dropzone';
+import Upload from 'views/admin/profile/components/Upload';
 
 
 
@@ -76,6 +78,28 @@ const EventMediaForm = ({ event, setEvent }) => {
           </Box>
         }
       /> */}
+      <Grid
+        templateColumns={{
+          base: "1fr",
+          lg: "1.62fr",
+        }}
+        templateRows={{
+          // base: "repeat(3, 1fr)",
+          lg: "1fr",
+        }}
+        gap={{ base: "20px", xl: "20px" }}>
+
+        <Upload
+          gridArea={{
+            base: "",
+            // lg: "1 / 3 / 2 / 4",
+          }}
+          minH={{ base: "auto", lg: "420px", "2xl": "365px" }}
+          pe='20px'
+          pb={{ base: "100px", lg: "20px" }}
+        />
+        </Grid>
+        {/* <Dropzone/> */}
 
       <Flex align="center" mt="20px">
         <FormLabel

@@ -16,8 +16,14 @@ import Profile from "views/admin/profile";
 import DataTables from "views/admin/dataTables";
 import RTL from "views/admin/rtl";
 
-// Auth Imports
-import SignInCentered from "views/auth/signIn";
+// Auth Imp
+
+const Routes = () => {
+  return (
+    <div>routes</div>
+  )
+}
+
 
 const routes = [
   {
@@ -61,7 +67,7 @@ const routes = [
     layout: "/auth",
     path: "/sign-in",
     icon: <Icon as={MdLock} width='20px' height='20px' color='inherit' />,
-    component: SignInCentered,
+    component: Routes,
   },
   {
     name: "RTL Admin",

@@ -15,7 +15,7 @@ export default function Banner(props) {
   return (
     <Card mb={{ base: "0px", lg: "20px" }} align='center'>
       <Box
-        bg={`url(${banner})`}
+        bg={`url(₹{banner})`}
         bgSize='cover'
         borderRadius='16px'
         h='131px'
